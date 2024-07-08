@@ -1,0 +1,26 @@
+// Conditional Rendering in React
+import React, { useState } from 'react';
+
+function ConditionalComponent() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
+  return (
+    <div>
+      {isLoggedIn ? (
+        <p>Welcome, User! <button onClick={handleLogout}>Logout</button></p>
+      ) : (
+        <button onClick={handleLogin}>Login</button>
+      )}
+    </div>
+  );
+}
+
+export default ConditionalComponent;
